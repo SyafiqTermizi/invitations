@@ -45,7 +45,11 @@ LOCAL_APPS = [
     'invitations.apps.InvitationsConfig'
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+THIRD_PARTY_APPS = [
+    'crispy_forms',
+]
+
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,3 +140,6 @@ STATIC_URL = '/static/'
 
 # invitation expiry in days
 INVITATION_EXPIRY = 3
+
+# crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

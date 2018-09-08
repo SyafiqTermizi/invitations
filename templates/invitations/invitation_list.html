@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        {% for invite in object_list %}
+            <div class="card">
+                <div class="card-body">
+                    <p>{{ invite.email }}</p>
+                    <p>{{ invite.name }}</p>
+                    <p>{{ invite.invited_by }}</p>
+                    <p>{{ invite.token }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
