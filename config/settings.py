@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import environ
 
+
 env = environ.Env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -42,7 +43,8 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    'invitations.apps.InvitationsConfig'
+    'invitations.apps.InvitationsConfig',
+    'dashboards.apps.DashboardsConfig',
 ]
 
 THIRD_PARTY_APPS = [
@@ -137,6 +139,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+#Login redirect url
+LOGIN_REDIRECT_URL = 'dashboards:index'
+LOGOUT_REDIRECT_URL = 'login'
 
 # invitation expiry in days
 INVITATION_EXPIRY = 3
