@@ -144,6 +144,9 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'dashboards:index'
 LOGOUT_REDIRECT_URL = 'login'
 
+# Email backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # invitation expiry in days
 INVITATION_EXPIRY = 3
 

@@ -17,7 +17,7 @@ class TimeStampedModel(models.Model):
 
 
 class Invitation(TimeStampedModel):
-    email_address = models.EmailField()
+    email_address = models.EmailField(unique=True)
     name = models.CharField(max_length=250)
     token = models.CharField(max_length=64, unique=True)
     invited_by = models.ForeignKey(User, related_name='invitations', on_delete=models.CASCADE)
