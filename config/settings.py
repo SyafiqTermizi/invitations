@@ -43,6 +43,7 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
+    'users.apps.UsersConfig',
     'invitations.apps.InvitationsConfig',
     'dashboards.apps.DashboardsConfig',
 ]
@@ -143,6 +144,9 @@ STATIC_URL = '/static/'
 #Login redirect url
 LOGIN_REDIRECT_URL = 'dashboards:index'
 LOGOUT_REDIRECT_URL = 'login'
+
+# user model
+AUTH_USER_MODEL = 'users.user'
 
 # Email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
